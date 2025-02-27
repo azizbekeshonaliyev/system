@@ -14,15 +14,9 @@
     title?: string
   }>()
 
-  import type {
-      ColumnFiltersState,
-      ExpandedState,
-      SortingState,
-      VisibilityState,
-  } from '@tanstack/vue-table'
+  import type { ExpandedState } from '@tanstack/vue-table'
   import { cn } from '@/lib/utils'
   import { Button } from '@/components/ui/button'
-
   import { Checkbox } from '@/components/ui/checkbox'
   import {
       DropdownMenu,
@@ -142,10 +136,6 @@
       }),
   ]
 
-  const sorting = ref<SortingState>([])
-  const columnFilters = ref<ColumnFiltersState>([])
-  const columnVisibility = ref<VisibilityState>({})
-  const rowSelection = ref({})
   const expanded = ref<ExpandedState>({})
 
   const table = useVueTable({
@@ -169,7 +159,7 @@
   <Layout :breadcrumbs="breadcrumbs">
     <Head title="Employees" />
 
-      <div class="w-full">
+      <div class="w-full p-4">
           <div class="flex gap-2 items-center py-4">
               <Input
                   class="max-w-sm"
